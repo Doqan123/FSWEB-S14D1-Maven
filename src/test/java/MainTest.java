@@ -9,14 +9,19 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.lang.reflect.Field;
+import java.util.Locale;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @ExtendWith(ResultAnalyzer.class)
 public class MainTest {
+    static {
+        Locale.setDefault(Locale.ENGLISH); // Nokta ile ondalık ayırıcı kullanır.
+    }
 
     private Circle circle;
     private Cylinder cylinder;
